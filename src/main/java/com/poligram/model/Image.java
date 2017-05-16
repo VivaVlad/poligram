@@ -19,13 +19,13 @@ public class Image {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;	
 	
-	@Column(name="imgname", length=100, nullable=false)
+	@Column(name="name", length=100, nullable=false)
 	private String name;
 	
 	@Column(name="description", length=255)
 	private String description;
 	
-	@Column(name="imgtype", length=100, nullable=false)
+	@Column(name="type", length=100, nullable=false)
 	private String type;
 	
 	@Lob @Basic(fetch = FetchType.LAZY)
