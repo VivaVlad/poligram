@@ -10,11 +10,16 @@
 </head>
     <body>
     <h1>Images</h1>
+
+    <div class="container text-center">
+        <div class="images-container">
         <c:forEach items="${images}" var="image">
-            <a href="/image?id=${image.id}">
+            <a href="/image-${album.id}-${image.id}">
                 <div class="images" style="background-image: url('/image?id=${image.id}');">
                 </div>
             </a>
         </c:forEach>
+        </div>
+    </div>
     </body>
 </html>

@@ -7,14 +7,15 @@
     <title>Albums List</title>
     <link href="<c:url value='/static/css/bootstrap.min.css' />" rel="stylesheet"></link>
     <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+
 </head>
     <body>
-    <h1>Images</h1>
-        <c:forEach items="${images}" var="image">
-            <a href="/image?id=${image.id}">
-                <div class="images" style="background-image: url('/image?id=${image.id}');">
-                </div>
+    <div class="background"></div>
+        <div class="image" style="background-image: url('/image?id=${image.id}');">
+            <a href="/admin/delete-image-${album.id}-${image.id}">
+                <span class="glyphicon glyphicon-remove"></span>
             </a>
-        </c:forEach>
+        </div>
+
     </body>
 </html>
