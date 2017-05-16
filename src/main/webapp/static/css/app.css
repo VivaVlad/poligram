@@ -1,12 +1,3 @@
-body, #mainWrapper {
-	height: 100%;
-	background-color:rgb(245, 245, 245);
-}
-
-body, .form-control{
-	font-size:12px!important;
-}
-
 .floatRight{
 	float:right;
 	margin-right: 18px;
@@ -16,30 +7,56 @@ body, .form-control{
 	color:red;
 }
 
-.uploadcontainer{
-	background-color: bisque;
-	padding: 20px;
-}
-
-.tablecontainer{
-	padding-left: 20px;
-}
-
 .generic-container {
-  width:80%;
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: #EAE7E7;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 0 30px black;
+	position:fixed;
+	width:80%;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #EAE7E7;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 0 30px black;
 }
 
 .custom-width {
-    width: 80px !important;
+	width: 80px !important;
 }
+
+body, #mainWrapper, .form-control{
+	font-size:12px!important;
+}
+
+#mainWrapper {
+	/*height: 720px; Without explicit px values, % in children's does not work*/
+	height: 100vh; /*with Viewport-Percentage, we can handles all devices screens  */
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+}
+
+.login-container {
+	margin-top: 100px;
+	background-color: floralwhite;
+	width: 40%;
+	left: 30%;
+	position: absolute;
+}
+
+.login-card {
+	width: 80%;
+	margin: auto;
+}
+
+.login-form {
+	padding: 10%;
+}
+
+.authbar{
+	margin-bottom:15px;
+}
+
 .images {
 	height: 206px;
 	width: 206px;
@@ -48,10 +65,46 @@ body, .form-control{
 	display: inline-block;
 	overflow: hidden;
 }
+
 h1{
 	text-align: center;
+	color: white;
 }
+
 .gi-2x{font-size: 2em;}
 .gi-3x{font-size: 3em;}
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
+
+.image{
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	bottom: 5%;
+	left: 5%;
+	margin: 0 auto;
+	background: no-repeat center center;
+	background-size: auto;
+	overflow: hidden;
+	z-index: 1;
+}
+.background{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0 auto;
+	background-size: 100% 100%;
+	background-color: #0f0f0f;
+	opacity: 0.5;
+}
+body{
+	background-image: url("../images/background.jpg");
+}
+.images-container{
+	position:fixed;
+	padding: 100px;
+	right: 10%;
+	left: 10%;
+}
