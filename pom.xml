@@ -111,13 +111,6 @@
 		    <artifactId>jstl</artifactId>
 		    <version>1.2</version>
 		</dependency>
-
-        <!--Liquibase -->
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-            <version>3.5.3</version>
-        </dependency>
     </dependencies>
 
 	<build>
@@ -133,18 +126,16 @@
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
-                <!-- User liquibase plugin -->
                 <plugin>
-                    <groupId>org.liquibase</groupId>
-                    <artifactId>liquibase-maven-plugin</artifactId>
-                    <version>3.4.2</version>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <propertyFile>liquibase/liquibase.properties</propertyFile>
-                        <changeLogFile>liquibase/db-changelog-master.xml</changeLogFile>
+                        <source>1.6</source>
+                        <target>1.6</target>
                     </configuration>
                 </plugin>
-			</plugins>
-		</pluginManagement>
-		<finalName>poligram</finalName>
+            </plugins>
+        </pluginManagement>
+        <finalName>poligram</finalName>
 	</build>
 </project>
