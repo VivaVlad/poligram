@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <html>
 
 <head>
@@ -27,9 +28,11 @@
 						<c:forEach items="${albums}" var="album">
 							<tr>
 								<td>${album.title}</td>
-								<td><a href="<c:url value='/edit-album-${album.id}' />" class="btn btn-success custom-width">edit</a></td>
+								<sec:authorize access="hasRole('ADMIN')">
+									<td><a href="<c:url value='admin/edit-album-${album.id}' />" class="btn btn-success custom-width">edit</a></td>
+									<td><a href="<c:url value='admin/delete-album-${album.id}' />" class="btn btn-danger custom-width">delete</a></td>
+								</sec:authorize>
 								<td><a href="<c:url value='/album-${album.id}' />" class="btn btn-primary custom-width">images</a></td>
-								<td><a href="<c:url value='/delete-album-${album.id}' />" class="btn btn-danger custom-width">delete</a></td>
 							</tr>
 						</c:forEach>
 						</tbody>
@@ -37,7 +40,7 @@
 				</div>
 			</div>
 			<div class="well">
-				<a href="<c:url value='/newalbum' />">Add New Album</a>
+				<a href="<c:url value='admin/newalbum' />">Add New Album</a>
 			</div>
 		</div>
 	</body>
