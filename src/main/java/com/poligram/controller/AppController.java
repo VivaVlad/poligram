@@ -422,7 +422,7 @@ public class AppController {
 	}
 
 	@RequestMapping(value = "album-{album_id}", method = RequestMethod.GET)
-	public String showImage(@PathVariable("album_id") Integer album_id, ModelMap model) {
+	public String showImages(@PathVariable("album_id") Integer album_id, ModelMap model) {
 
 		List<Image> images = imageService.findAllByAlbumId(album_id);
 		Album album = albumService.findById(album_id);
@@ -430,5 +430,14 @@ public class AppController {
 		model.addAttribute("images", images);
 
 		return "images";
+	}
+	@RequestMapping(value = "image-{albumId}-{imageId}", method = RequestMethod.GET)
+	public String showImage(@PathVariable int albumId, @PathVariable int imageId,ModelMap model) {
+		Album album = albumService.findById(albumId);
+		Image image = imageService.findById(imageId);
+		model.addAttribute("image", image);
+		model.addAttribute("album", album);
+
+		return "image";
 	}
 }
